@@ -8,6 +8,9 @@ import { GroupComponent } from './output/group/group.component';
 import { OutputComponent } from './output/output.component';
 import { SettingsComponent } from './settings/settings.component';
 import { JoinButtonComponent } from './join-button/join-button.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { GraphQLModule } from './graphql.module';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -20,7 +23,10 @@ import { JoinButtonComponent } from './join-button/join-button.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule,
+    GraphQLModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
