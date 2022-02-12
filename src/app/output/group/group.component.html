@@ -1,0 +1,10 @@
+<div class="card" style="width: 300px;">
+  <div class="card-header">
+    Team {{ index+1 }}
+  </div>
+  <ul class="list-group list-group-flush">
+    <li *ngFor="let player of currentGroup.players" class="list-group-item">
+      {{ player }}
+    </li>
+  </ul>
+</div>
