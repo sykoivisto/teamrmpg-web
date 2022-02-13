@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Group } from '../../shared/group.model';
+import { Group } from '../group.model';
 
 @Component({
   selector: 'app-group',
@@ -12,11 +12,19 @@ export class GroupComponent implements OnInit {
   currentGroup!: Group;
 
   @Input()
-  index!: number;
+  index = 0;
+
+  @Input()
+  teamName!: string;
 
   constructor() { }
 
   ngOnInit(): void {
+    if (this.teamName) {
+      return;
+    } else {
+      this.teamName = 'Team ' + (this.index+1);
+    }
   }
 
 }
