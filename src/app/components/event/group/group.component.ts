@@ -1,5 +1,4 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Group } from '../group.model';
 
 @Component({
   selector: 'app-group',
@@ -9,7 +8,7 @@ import { Group } from '../group.model';
 export class GroupComponent implements OnInit {
 
   @Input()
-  currentGroup!: Group;
+  currentGroup!: string[];
 
   @Input()
   index = 0;

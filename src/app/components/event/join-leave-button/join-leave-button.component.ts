@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-join-leave-button',
@@ -9,12 +9,18 @@ export class JoinLeaveButtonComponent implements OnInit {
 
   action = 'Join' // set to join or leave
 
-  eventType = 'Custom' // should be dynamically set to whichever event type is received from the database
+  @Input() eventType = 'Custom' // should be dynamically set to whichever event type is received from the database
+
+  @Input() eventId = 0;
+
+  joinButtonDisabled = false;
 
   constructor() { }
 
   ngOnInit(): void {
-
+    if (this.eventId === 0) {
+      this.joinButtonDisabled = true;
+    }
   }
 
   onClick() {
