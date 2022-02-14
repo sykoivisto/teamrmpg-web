@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { TeamSortService } from 'src/app/shared/services/team-sort.service';
+import {CdkDragDrop, moveItemInArray, transferArrayItem} from '@angular/cdk/drag-drop';
 
 @Component({
   selector: 'app-event',
@@ -53,4 +54,24 @@ export class EventComponent implements OnInit {
 
     //update the database
   }
+
+  onAllToUnassigned() {
+    this.teams[1].roster.push(...this.teams[0].roster, ...this.teams[2].roster)
+    this.teams[0].roster = [];
+    this.teams[2].roster = [];
+  }
+
+  drop(event: CdkDragDrop<string[]>) {
+    if (event.previousContainer === event.container) {
+      moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
+    } else {
+      transferArrayItem(
+        event.previousContainer.data,
+        event.container.data,
+        event.previousIndex,
+        event.currentIndex,
+      );
+    }
+  }
+
 }

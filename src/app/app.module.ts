@@ -10,6 +10,8 @@ import { GraphQLModule } from './graphql.module';
 import { HttpClientModule } from '@angular/common/http';
 import { JoinLeaveButtonComponent } from './components/event/join-leave-button/join-leave-button.component';
 import { EventComponent } from './components/event/event.component';
+import { DragDropModule} from '@angular/cdk/drag-drop';
+
 
 @NgModule({
   declarations: [
@@ -24,7 +26,8 @@ import { EventComponent } from './components/event/event.component';
     FormsModule,
     BrowserAnimationsModule,
     GraphQLModule,
-    HttpClientModule
+    HttpClientModule,
+    DragDropModule
   ],
   providers: [],
   bootstrap: [AppComponent]

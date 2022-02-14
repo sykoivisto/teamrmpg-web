@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 
 @Injectable({ providedIn: 'root' })
 export class TeamSortService {
-
   //shuffle() accepts an array of strings, and returns an array comprised of the same items in a different order
   shuffle(array: string[]) {
     let currentIndex = array.length,
@@ -30,20 +29,16 @@ export class TeamSortService {
 
   //autoSortRemaining() distributes players from the unassigned array as evenly as possible to team1 and team2.
   autoSortRemaining(team1: string[], team2: string[], unassigned: string[]) {
-
-    let teams = [
-      team1,
-      team2
-    ];
+    let teams = [team1, team2];
 
     this.shuffle(unassigned);
 
     while (unassigned.length > 0) {
       if (teams[0].length <= teams[1].length) {
-        let player = unassigned.splice(0,1);
+        let player = unassigned.splice(0, 1);
         teams[0].push(player[0]);
       } else {
-        let player = unassigned.splice(0,1);
+        let player = unassigned.splice(0, 1);
         teams[1].push(player[0]);
       }
     }
