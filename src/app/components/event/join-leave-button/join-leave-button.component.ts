@@ -3,7 +3,7 @@ import { Component, Input, OnInit } from '@angular/core';
 @Component({
   selector: 'app-join-leave-button',
   templateUrl: './join-leave-button.component.html',
-  styleUrls: ['./join-leave-button.component.css']
+  styleUrls: ['./join-leave-button.component.scss']
 })
 export class JoinLeaveButtonComponent implements OnInit {
 

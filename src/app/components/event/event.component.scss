@@ -20,3 +20,16 @@
 .button-set * {
   margin-right: 10px;
 }
+
+//give groups some room
+app-group{
+  display: inline-block;
+  margin: 10px 10px 0 0;
+  width: 100%;
+}
+ul {
+  min-height: 20px;
+}
+li {
+  cursor: move;
+}

@@ -5,7 +5,7 @@ import {CdkDragDrop, moveItemInArray, transferArrayItem} from '@angular/cdk/drag
 @Component({
   selector: 'app-event',
   templateUrl: './event.component.html',
-  styleUrls: ['./event.component.css'],
+  styleUrls: ['./event.component.scss'],
 })
 export class EventComponent implements OnInit {
   eventName = "theLegend27's Scrim"; //get this from the database
